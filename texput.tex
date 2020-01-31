@@ -72,12 +72,19 @@ that:
 
 \item
   Lets assume that the R/D curve of each $i$-th piece is known. The
-  problem of determining the quantization level of the pieces can be
-  expressed as a collection of Lagrangians
+  problem of determining the quantization level of the pieces, given a
+  bit budget $R$, can be expressed as minimizing the
+  \href{https://en.wikipedia.org/wiki/Lagrange_multiplier}{Lagrangian}
+  \begin{equation}
+    L = D+\lambda R.
+  \end{equation}
+  Because both, the rate and the distortion are additive, the previous
+  equation can be written as
   \begin{equation}
     \sum_i L_i = \sum_i D_i + \lambda\sum_i R_i.
   \end{equation}
-  Taking the derivative and equaling to $0$ to find the rates that minimizes the distortion,
+  Taking the derivative with respect to the rate, and equaling to $0$
+  to find the rates that minimizes the distortion, we get that
   \begin{equation*}
     \frac{\partial L_i}{\partial R_i} = \frac{\partial D_i}{\partial R_i} + \lambda = 0,
   \end{equation*}
